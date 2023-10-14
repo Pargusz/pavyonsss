@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+* {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  .container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ekran yüksekliğine göre boyutlandırma */
+    background-image: url('images/ankara-havasi.gif'); /* Arka plan resmi yolunu buraya ekleyin */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+  }
+  .content h1 {
+    color: white;
+    font-size: 36px;
+    animation: colorChange 3s infinite, spin 3s infinite linear;
+  }
+  .back-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: transparent;
+    color: white;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    animation: changecolor 2s infinite, slideleft 2s infinite;
+    font-weight: bold;
+  }
+  @keyframes changecolor {
+    0% {
+      border-color: rgb(255, 0, 0);
+    }
+    25% {
+      border-color: rgb(0, 255, 0);
+    }
+    50% {
+      border-color: rgb(0, 0, 255);
+    }
+    75% {
+      border-color: rgb(255, 255, 0);
+    }
+    100% {
+      border-color: rgb(255, 0, 255);
+    }
+  }
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes slideleft {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(-5px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  @keyframes colorChange {
+    0% {
+      color: white;
+    }
+    25% {
+      color: cyan;
+    }
+    50% {
+      color: yellow;
+    }
+    75% {
+      color: rgb(21, 255, 0);
+    }
+    100% {
+      color: rgb(46, 194, 71);
+    }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="content">
+    <h1>Numara: 0581 831  35 31</h1>
+    <!-- İçeriğinizi buraya ekleyin -->
+  </div>
+</div>
+
+<audio controls autoplay style="display:none">
+  <source src="audio/pavyonmusicşın.mp3" type="audio/mpeg">
+  Tarayıcınız audio elementini desteklemiyor.
+</audio>
+
+<button onclick="window.location.href='index.html'" class="back-button">Geri</button>
+
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    var audio = document.querySelector('audio');
+    audio.load();
+    audio.play();
+  });
+</script>
+
+</body>
+</html>

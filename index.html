@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Ekran boyutu değişse bile kaydırmayı engelleme */
+    background-color: #242323; /* Arka plan rengi */
+  }
+  .container {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 30px; /* Üst boşluk ayarla */
+  }
+  .content {
+    text-align: center;
+  }
+  .content h1 {
+    color: white; /* Yazı rengi beyaz */
+    font-size: 36px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Kontur efekti */
+    animation: changeshadow 3s infinite; /* Konturun renk değiştirdiği animasyon */
+  }
+  .content h1:hover {
+    animation: rotate 2s linear infinite; /* Dönme animasyonu */
+  }
+  .images {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  .images img {
+    width: 250px; /* Yeni genişlik değeri */
+    height: 250px; /* Yeni yükseklik değeri */
+    margin: 0 10px; /* Yeni boşluk değeri */
+    transition: transform 0.3s; /* Animasyon süresi ve efekti */
+  }
+  .images img:hover {
+    transform: scale(1.1); /* Büyüme efekti */
+  }
+  .navbar {
+    position: fixed;
+    width: 100%;
+    background-color: transparent; /* Arkaplan rengini transparan yap */
+    overflow: hidden;
+    text-align: center;
+    bottom: 0; /* Alt kısma yerleştirme */
+  }
+  .navbar a {
+    display: inline-block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    animation: changecolor 6s infinite; /* Rengin değiştiği animasyon */
+    font-weight: bold; /* Yazıları kalın yap */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Yazı konturunu ekler */
+    transition: transform 0.3s; /* Animasyon süresi ve efekti */
+    font-size: 24px; /* İletişim yazısının boyutu */
+  }
+  .navbar a:hover {
+    transform: translateX(-5px); /* Sol yöne kaydırma efekti */
+  }
+  .navbar a:nth-child(1) {
+    color: rgb(255, 0, 0); /* Kırmızı renk */
+  }
+  .navbar a:nth-child(2) {
+    color: rgb(0, 255, 0); /* Yeşil renk */
+  }
+  .navbar a:nth-child(3) {
+    color: rgb(0, 0, 255); /* Mavi renk */
+  }
+  @keyframes changecolor {
+    0% { color: rgb(255, 0, 0); } /* Kırmızı renk */
+    20% { color: rgb(255, 255, 0); } /* Sarı renk */
+    40% { color: rgb(0, 255, 255); } /* Cyan renk */
+    60% { color: rgb(255, 165, 0); } /* Turuncu renk */
+    80% { color: rgb(128, 0, 128); } /* Mor renk */
+    100% { color: rgb(255, 0, 0); } /* Kırmızı renk */
+  }
+  @keyframes changeshadow {
+    0% { text-shadow: 2px 2px 4px rgb(255, 0, 0); } /* Kırmızı kontur */
+    20% { text-shadow: 2px 2px 4px rgb(255, 255, 0); } /* Sarı kontur */
+    40% { text-shadow: 2px 2px 4px rgb(0, 255, 255); } /* Cyan kontur */
+    60% { text-shadow: 2px 2px 4px rgb(255, 165, 0); } /* Turuncu kontur */
+    80% { text-shadow: 2px 2px 4px rgb(128, 0, 128); } /* Mor kontur */
+    100% { text-shadow: 2px 2px 4px rgb(255, 0, 0); } /* Kırmızı kontur */
+  }
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg); /* Başlangıç açısı */
+    }
+    100% {
+      transform: rotate(360deg); /* Son açı, 360 derece dönme */
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="content">
+    <!-- İçeriğinizi buraya ekleyin -->
+    <h1>Pavyonumuza Hoş Geldiniz!</h1>
+  </div>
+</div>
+
+<div class="images">
+  <img src="images/ankarapavyonamca.jpg" alt="Resim 1">
+  <img src="images/90s-dance.gif" alt="Resim 2">
+  <img src="images/tutuklu.jpg" alt="Resim 3">
+</div>
+
+<div class="navbar">
+  <a href="iletişim.html">İletişim</a>
+</div>
+
+</body>
+</html>
